@@ -27,4 +27,4 @@ app.listen(5000, () => {
     const baseURL = process.env.REACT_APP_API_BASE_URL
     console.log(`Server Started at ${baseURL}`, baseURL)
 })
-app.get("/", (req, res) => res.send("Backend is running"));
+// app.get("/", (req, res) => res.send("Backend is running"));
