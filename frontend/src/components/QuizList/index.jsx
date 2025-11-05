@@ -68,7 +68,7 @@ const QuizList = () => {
                     </Grid>
                 ))}
             </Grid>
-            {isAdmin ? <Button startIcon={<AddOutlinedIcon />} variant="contained" color="success"> Add Quiz </Button> : null}
+            {isAdmin ? <Button startIcon={<AddOutlinedIcon />} variant="contained" color="success" component={Link} to="/quizzes/create"> Add Quiz </Button> : null}
 
         </Box>
     );
