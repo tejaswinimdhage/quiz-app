@@ -1,0 +1,69 @@
+// components/LoginForm.js
+import { useState } from "react";
+import { Box, TextField, Button, Typography, Paper } from "@mui/material";
+import { toast } from "react-hot-toast";
+import { useAuthStore } from "../../hooks/useAuthStore";
+
+export default function LoginForm() {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const login = useAuthStore((state) => state.login);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (username === import.meta.env.ADMIN_USER && password === import.meta.env.ADMIN_PASS) {
+            login({ isAdmin: true });
+            toast.success("Logged in as Admin");
+        } else {
+            login({ isAdmin: false });
+            toast.error("Invalid credentials");
+        }
+
+        setUsername("");
+        setPassword("");
+    };
+
+    return (
+        <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            minHeight="80vh"
+        >
+            <Paper elevation={3} sx={{ padding: 4, width: 300 }}>
+                <Typography variant="h5" mb={3} textAlign="center">
+                    Login
+                </Typography>
+                <form onSubmit={handleSubmit}>
+                    <TextField
+                        label="Username"
+                        fullWidth
+                        margin="normal"
+                        size="small"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <TextField
+                        label="Password"
+                        type="password"
+                        fullWidth
+                        size="small"
+                        margin="normal"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        color="success"
+                        fullWidth
+                        sx={{ mt: 2 }}
+                    >
+                        Login
+                    </Button>
+                </form>
+            </Paper>
+        </Box>
+    );
+}
