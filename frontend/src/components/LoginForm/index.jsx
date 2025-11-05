@@ -14,11 +14,10 @@ export default function LoginForm() {
 
         if (username === import.meta.env.ADMIN_USER && password === import.meta.env.ADMIN_PASS) {
             login({ isAdmin: true });
-            toast.success("Logged in as Admin");
         } else {
             login({ isAdmin: false });
-            toast.error("Invalid credentials");
         }
+        toast.success("Logged in Successfully!");
 
         setUsername("");
         setPassword("");

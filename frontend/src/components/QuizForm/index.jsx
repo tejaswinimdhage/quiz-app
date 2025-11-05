@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const TakeQuiz = () => {
 
@@ -53,9 +53,7 @@ const TakeQuiz = () => {
         setScore(null);
     };
 
-    console.log("quiz", quiz)
     if (!quiz || Object.keys(quiz).length === 0) return <Typography>Loading quiz...</Typography>;
-
 
     return (
         <Box sx={{ p: 4 }}>
@@ -93,9 +91,9 @@ const TakeQuiz = () => {
             )}
 
             <Box display="flex" flexDirection="column" gap={2}>
-                <Typography variant="h5" color="success">
+                {score ? <Typography variant="h5" color="success">
                     You scored {score} / {quiz.questions.length}
-                </Typography>
+                </Typography> : null}
                 {score === null ? (
                     <Button variant="contained" color="success" onClick={handleSubmit}>
                         Submit
@@ -109,7 +107,8 @@ const TakeQuiz = () => {
                 <Button
                     variant="outlined"
                     color="error"
-                    onClick={() => window.location.reload()}
+                    component={Link}
+                    to="/quizzes"
                 >
                     Cancel
                 </Button>
