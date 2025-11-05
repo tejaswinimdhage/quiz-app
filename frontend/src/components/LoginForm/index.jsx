@@ -14,6 +14,8 @@ export default function LoginForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        console.log("credentials", username, import.meta.env.ADMIN_USER, password, import.meta.env.ADMIN_PASS);
+        
         if (username === import.meta.env.ADMIN_USER && password === import.meta.env.ADMIN_PASS) {
             login({ isAdmin: true });
         } else {
