@@ -69,7 +69,7 @@ const CreateForm = () => {
             toast.error("Failed to create quiz");
             console.error(error);
         } finally {
-            navigate({to:"/quizzes"})
+            navigate("/quizzes")
         }
     };
 

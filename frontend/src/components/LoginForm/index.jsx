@@ -3,8 +3,10 @@ import { useState } from "react";
 import { Box, TextField, Button, Typography, Paper } from "@mui/material";
 import { toast } from "react-hot-toast";
 import { useAuthStore } from "../../hooks/useAuthStore";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
+    const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const login = useAuthStore((state) => state.login);
@@ -19,6 +21,7 @@ export default function LoginForm() {
         }
         toast.success("Logged in Successfully!");
 
+        navigate("/quizzes")
         setUsername("");
         setPassword("");
     };
