@@ -24,7 +24,7 @@ const TakeQuiz = () => {
     useEffect(() => {
         const fetchQuiz = async () => {
             try {
-                const res = await axios.get(`/api/quizzes/${quizId}`);
+                const res = await axios.get(`https://quiz-app-dm2s.onrender.com/api/quizzes/${quizId}`);
                 setQuiz(res.data);
             } catch (error) {
                 toast.error("Failed to load quiz");

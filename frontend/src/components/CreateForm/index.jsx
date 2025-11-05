@@ -61,7 +61,7 @@ const CreateForm = () => {
     const handleSubmit = async () => {
         try {
             const payload = { title: quizName, questions };
-            await axios.post("api/quizzes", payload);
+            await axios.post("https://quiz-app-dm2s.onrender.com/api/quizzes", payload);
             toast.success("Quiz created successfully!");
             setQuizName("");
             setQuestions([{ questionText: "", options: ["", ""], correctAnswer: "" }]);

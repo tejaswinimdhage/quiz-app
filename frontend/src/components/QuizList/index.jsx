@@ -12,7 +12,7 @@ const QuizList = () => {
     const { isAdmin } = useAuthStore();
     const fetchQuizzes = async () => {
         try {
-            const res = await axios.get("api/quizzes");
+            const res = await axios.get("https://quiz-app-dm2s.onrender.com/api/quizzes");
             setQuizzes(res.data);
         } catch (error) {
             console.error("Error fetching quizzes:", error);
@@ -35,7 +35,7 @@ const QuizList = () => {
                 {quizzes.map((quiz) => (
                     <Grid item key={quiz._id} xs={12} sm={6} md={4} lg={3}>
                         <Card
-                            component={Link} to={`/${quiz._id}`}
+                            component={Link} to={`/quizzes/${quiz._id}`}
                             sx={{
                                 height: 150,
                                 display: "flex",
