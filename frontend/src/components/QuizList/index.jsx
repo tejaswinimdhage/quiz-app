@@ -35,7 +35,7 @@ const QuizList = () => {
                 {quizzes.map((quiz) => (
                     <Grid item key={quiz._id} xs={12} sm={6} md={4} lg={3}>
                         <Card
-                            component={Link} to={`/quizzes/${quiz._id}`}
+                            component={Link} to={`/${quiz._id}`}
                             sx={{
                                 height: 150,
                                 display: "flex",
