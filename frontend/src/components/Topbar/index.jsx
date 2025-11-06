@@ -12,7 +12,7 @@ export default function TopBar() {
     const { isLoggedIn } = useAuthStore();
 
     return (
-        <AppBar position="fixed" color="success">
+        <AppBar position="static" color="success">
             <Toolbar>
                 <IconButton
                     size="large"
