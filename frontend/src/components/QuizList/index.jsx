@@ -28,9 +28,12 @@ const QuizList = () => {
             <Typography variant="h3" mb={3}>
                 Welcome to Quiz App!
             </Typography>
+            {isAdmin ? <Button mb={3} startIcon={<AddOutlinedIcon />} variant="contained" color="success" component={Link} to="/quizzes/create"> Add Quiz </Button> : null}
+
             <Typography variant="h4" mb={3}>
                 Take Quizzes
             </Typography>
+
             <Grid container spacing={3} mb={2} >
                 {quizzes.map((quiz) => (
                     <Grid item key={quiz._id} xs={12} sm={6} md={4} lg={3}>
@@ -66,8 +69,6 @@ const QuizList = () => {
                     </Grid>
                 ))}
             </Grid>
-            {isAdmin ? <Button startIcon={<AddOutlinedIcon />} variant="contained" color="success" component={Link} to="/quizzes/create"> Add Quiz </Button> : null}
-
         </Box>
     );
 };
