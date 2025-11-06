@@ -25,12 +25,12 @@ const QuizList = () => {
 
     return (
         <Box sx={{ p: 4 }}>
-            <Typography variant="h3" mb={3}>
+            <Typography variant="h3" mb={3} color="success">
                 Welcome to Quiz App!
             </Typography>
             {isAdmin ? <Button mb={3} startIcon={<AddOutlinedIcon />} variant="contained" color="success" component={Link} to="/quizzes/create"> Add Quiz </Button> : null}
 
-            <Typography variant="h4" mb={3}>
+            <Typography variant="h4" mb={3} color="success">
                 Take Quizzes
             </Typography>
 
