@@ -49,7 +49,6 @@ const QuizList = () => {
                                 transition: "0.3s",
                                 "&:hover": {
                                     boxShadow: 6,
-                                    transform: "scale(1.05)",
                                 },
                             }}
                         >
@@ -59,7 +58,6 @@ const QuizList = () => {
                                     variant="h6"
                                     component="div"
                                     textAlign="center"
-                                    noWrap
                                 >
                                     {quiz.title}
                                 </Typography>
