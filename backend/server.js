@@ -8,7 +8,7 @@ import quizRouter from "./routes/quiz.route.js";
 dotenv.config();
 const app = express();
 
-// app.use(cors()); // Enable CORS
+app.use(cors()); // Enable CORS
 app.use(express.json());
 
 // API routes

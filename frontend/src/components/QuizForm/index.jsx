@@ -39,6 +39,13 @@ const TakeQuiz = () => {
         setAnswers({ ...answers, [qIndex]: option });
     };
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+
+        }, 5000)
+
+        clearTimeout(timer);
+    }, [])
     const handleSubmit = () => {
         let tempScore = 0;
         quiz.questions.forEach((q, index) => {
